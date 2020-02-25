@@ -1,0 +1,23 @@
+$primary-color: #30475e;
+$secondary-color: #f1935c;
+$secondary-color-light: #cc8a63;
+$accent-color: #ba6b57;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  background: $primary-color;
+  color: $secondary-color;
+  height: 20rem;
+
+  .title {
+    margin: 1rem;
+  }
+
+  .subtitle {
+    color: $secondary-color-light;
+  }
+}
