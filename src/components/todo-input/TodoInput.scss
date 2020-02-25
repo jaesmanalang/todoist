@@ -1,0 +1,30 @@
+@import '../../assets/styles/variables';
+
+.todo-input {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 1rem auto;
+  max-width: 769px;
+
+  &__text,
+  &__btn {
+    font-size: 2rem;
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+
+  &__btn {
+    background-color: $accent-color;
+    color: #f1d6d0;
+    border-color: transparent;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #984b38;
+    }
+  }
+
+
+}
