@@ -33,13 +33,25 @@ class App extends Component {
     this.setState({ todos: [...this.state.todos, newTodo] });
   };
 
+  markComplete = (id) => {
+    this.setState({
+      todos: this.state.todos.map((todo) => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      })
+    });
+    console.log(id);
+  };
+
   render() {
     return (
       <div>
         <Header />
         <div className="container">
           <TodoInput addTodo={this.addTodo} />
-          <TodoList todos={this.state.todos} />
+          <TodoList todos={this.state.todos} markComplete={this.markComplete} />
         </div>
       </div>
     );
