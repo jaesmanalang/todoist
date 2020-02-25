@@ -1,0 +1,15 @@
+.todo-item {
+  background: #fff;
+  margin: 1rem 0;
+  padding: 1.5rem;
+  border-radius: .5rem;
+
+  &:hover {
+    transform: scale(1.010);
+    transition: 0.3s ease;
+  }
+
+  .title {
+    // text-align: center;
+  }
+}
