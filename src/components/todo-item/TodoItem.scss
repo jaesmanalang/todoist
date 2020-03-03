@@ -10,7 +10,6 @@
   .line-through {
     text-decoration: line-through;
     color: rgb(184, 184, 184);
-    transition: 0.3s ease-in-out;
   }
 
   .none {
@@ -19,7 +18,7 @@
 
   &:hover {
     transform: scale(1.010);
-    transition: 0.6s ease-in-out;
+    transition: 0.3s ease-in-out;
   }
 
   .check-title {

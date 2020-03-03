@@ -20,7 +20,10 @@ class TodoItem extends Component {
           <span className="edit">
             <i className="fas fa-pen"></i>
           </span>
-          <span className="remove">
+          <span
+            className="remove"
+            onClick={this.props.deleteTodo.bind(this, id)}
+          >
             <i className="fas fa-trash"></i>
           </span>
         </div>

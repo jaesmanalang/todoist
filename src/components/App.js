@@ -23,19 +23,23 @@ class App extends Component {
     };
   }
 
-  addTodo = (text) => {
-    const newTodo = {
-      id: Date.now(),
-      title: text,
-      completed: false
-    };
-    console.log(newTodo.title);
-    this.setState({ todos: [...this.state.todos, newTodo] });
+  addTodo = text => {
+    if (text.length > 0) {
+      const newTodo = {
+        id: Date.now(),
+        title: text,
+        completed: false
+      };
+      console.log(newTodo.title);
+      this.setState({ todos: [...this.state.todos, newTodo] });
+    } else {
+      alert('Please type something');
+    }
   };
 
-  markComplete = (id) => {
+  markComplete = id => {
     this.setState({
-      todos: this.state.todos.map((todo) => {
+      todos: this.state.todos.map(todo => {
         if (todo.id === id) {
           todo.completed = !todo.completed;
         }
@@ -45,13 +49,25 @@ class App extends Component {
     console.log(id);
   };
 
+  deleteTodo = id => {
+    this.setState({
+      todos: this.state.todos.filter(todo => todo.id !== id)
+    });
+  };
+
+  editTodo = id => {};
+
   render() {
     return (
       <div>
         <Header />
         <div className="container">
           <TodoInput addTodo={this.addTodo} />
-          <TodoList todos={this.state.todos} markComplete={this.markComplete} />
+          <TodoList
+            todos={this.state.todos}
+            deleteTodo={this.deleteTodo}
+            markComplete={this.markComplete}
+          />
         </div>
       </div>
     );
