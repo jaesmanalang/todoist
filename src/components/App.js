@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from './header/Header';
 import TodoInput from './todo-input/TodoInput';
@@ -55,19 +56,28 @@ class App extends Component {
     });
   };
 
-  editTodo = id => {};
+  editTodo = id => {
+    console.log(id);
+  };
 
   render() {
     return (
       <div>
         <Header />
         <div className="container">
-          <TodoInput addTodo={this.addTodo} />
-          <TodoList
-            todos={this.state.todos}
-            deleteTodo={this.deleteTodo}
-            markComplete={this.markComplete}
-          />
+          <Router>
+            <Switch>
+              <Route path="/">
+                <TodoInput addTodo={this.addTodo} editTodo={this.editTodo} />
+                <TodoList
+                  todos={this.state.todos}
+                  deleteTodo={this.deleteTodo}
+                  editTodo={this.editTodo}
+                  markComplete={this.markComplete}
+                />
+              </Route>
+            </Switch>
+          </Router>
         </div>
       </div>
     );

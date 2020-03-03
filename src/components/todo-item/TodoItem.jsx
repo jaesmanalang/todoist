@@ -17,9 +17,6 @@ class TodoItem extends Component {
           </h2>
         </div>
         <div className="icons">
-          <span className="edit">
-            <i className="fas fa-pen"></i>
-          </span>
           <span
             className="remove"
             onClick={this.props.deleteTodo.bind(this, id)}
